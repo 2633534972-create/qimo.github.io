@@ -1,0 +1,260 @@
+/* 全局重置：清除默认边距和内边距 */
+* {
+  margin: 0;           /* 外边距为0 */
+  padding: 0;          /* 内边距为0 */
+  box-sizing: border-box; /* 边框和内边距包含在宽度内 */
+}
+
+/* 页面整体样式 */
+body {
+  font-family: "Microsoft YaHei", Arial, sans-serif; /* 设置字体 */
+  background: #f5f5f5;    /* 背景色为浅灰 */
+  color: #333;            /* 文字颜色为深灰 */
+}
+
+/* 主容器：居中并限制最大宽度 */
+.container {
+  max-width: 1200px;      /* 最大宽度1200px */
+  margin: 0 auto;         /* 水平居中 */
+  padding: 20px;          /* 内边距20px */
+}
+
+/* 顶部导航栏 */
+header {
+  background: #333;       /* 背景色为深灰 */
+  color: #fff;            /* 文字颜色为白色 */
+  padding: 15px 0;        /* 上下内边距15px，左右0 */
+  margin-bottom: 20px;    /* 下方外边距20px */
+}
+
+/* 标题居中 */
+header h1 {
+  text-align: center;     /* 文字居中 */
+  color: #fff;            /* 确保文字为白色 */
+}
+
+/* 搜索栏样式 */
+.search-bar {
+  text-align: center;     /* 内容居中 */
+  margin-bottom: 20px;    /* 下方间距 */
+}
+
+/* 搜索输入框 */
+.search-bar input {
+  width: 60%;             /* 宽度占60% */
+  max-width: 500px;       /* 最大宽度500px */
+  padding: 10px 15px;     /* 内边距：上下10px，左右15px */
+  font-size: 16px;        /* 字体大小16px */
+  border-radius: 4px;     /* 圆角4px */
+  border: 1px solid #ccc; /* 边框：1px浅灰实线 */
+}
+
+/* 搜索按钮 */
+.search-bar button {
+  padding: 10px 20px;     /* 内边距：上下10px，左右20px */
+  margin-left: 8px;       /* 左外边距8px */
+  background: #ff6b6b;    /* 背景色为珊瑚红 */
+  color: #fff;            /* 文字白色 */
+  border: none;           /* 无边框 */
+  border-radius: 4px;     /* 圆角4px */
+  cursor: pointer;        /* 鼠标悬停时显示手型 */
+}
+
+/* 分类筛选按钮区域 */
+.filters {
+  margin-bottom: 20px;    /* 下方间距 */
+  text-align: center;     /* 按钮居中 */
+}
+
+/* 分类按钮通用样式 */
+.filters button {
+  padding: 8px 16px;      /* 内边距 */
+  margin: 0 5px;          /* 左右外边距5px */
+  background: #4ecdc4;    /* 背景色为青绿色 */
+  color: #fff;            /* 文字白色 */
+  border: none;           /* 无边框 */
+  border-radius: 4px;     /* 圆角 */
+  cursor: pointer;        /* 手型指针 */
+}
+
+/* 当前激活的分类按钮 */
+.filters button.active {
+  background: #333;      /* 激活时背景变深灰 */
+}
+
+/* 商品列表：网格布局 */
+.product-list {
+  display: grid;                              /* 使用网格布局 */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* 自动填充，每列最小280px */
+  gap: 20px;                                  /* 网格间距20px */
+}
+
+/* 单个商品卡片 */
+.product {
+  background: #fff;         /* 背景白色 */
+  border-radius: 8px;       /* 圆角8px */
+  overflow: hidden;         /* 超出部分隐藏（图片裁剪） */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* 阴影效果 */
+  transition: transform .2s; /* 悬停动画过渡 */
+}
+
+/* 鼠标悬停时上浮效果 */
+.product:hover {
+  transform: translateY(-5px); /* 向上移动5px */
+}
+
+/* 商品图片 */
+.product img {
+  width: 100%;              /* 宽度100% */
+  height: 200px;            /* 固定高度200px */
+  object-fit: cover;        /* 图片裁剪填充 */
+}
+
+/* 商品信息区域 */
+.info {
+  padding: 15px;            /* 内边距15px */
+}
+
+/* 商品标题 */
+.info h3 {
+  margin-bottom: 8px;       /* 下方间距 */
+  font-size: 18px;          /* 字体大小 */
+}
+
+/* 价格样式 */
+.price {
+  color: #ff6b6b;           /* 红色价格 */
+  font-size: 20px;          /* 大号字体 */
+  font-weight: bold;        /* 加粗 */
+  margin: 10px 0;           /* 上下外边距 */
+}
+
+/* 加入购物车按钮 */
+.info button {
+  width: 100%;              /* 宽度100% */
+  padding: 10px;            /* 内边距 */
+  background: #45b7d1;      /* 蓝色背景 */
+  color: #fff;              /* 白色文字 */
+  border: none;             /* 无边框 */
+  border-radius: 4px;       /* 圆角 */
+  cursor: pointer;          /* 手型指针 */
+  font-size: 16px;          /* 字体大小 */
+}
+
+/* 购物车侧边栏 */
+.cart {
+  position: fixed;          /* 固定定位 */
+  right: 20px;              /* 距离右边20px */
+  top: 20px;                /* 距离顶部20px */
+  background: #333;         /* 深色背景 */
+  color: #fff;              /* 白色文字 */
+  padding: 15px;            /* 内边距 */
+  border-radius: 8px;       /* 圆角 */
+  width: 350px;             /* 固定宽度 */
+  max-height: 80vh;         /* 最大高度80%视口 */
+  overflow-y: auto;         /* 内容过多时纵向滚动 */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2); /* 阴影 */
+  display: none;            /* 默认隐藏 */
+}
+
+/* 购物车标题 */
+.cart h2 {
+  margin-bottom: 15px;      /* 下方间距 */
+  text-align: center;       /* 居中 */
+}
+
+/* 购物车中的每个商品项 */
+.cart-item {
+  display: flex;            /* 弹性布局 */
+  align-items: center;      /* 垂直居中 */
+  margin-bottom: 12px;      /* 下方间距 */
+  background: #444;        /* 稍浅背景 */
+  padding: 10px;            /* 内边距 */
+  border-radius: 4px;       /* 圆角 */
+}
+
+/* 购物车商品小图 */
+.cart-item img {
+  width: 60px;              /* 固定宽度 */
+  height: 60px;             /* 固定高度 */
+  object-fit: cover;        /* 裁剪填充 */
+  margin-right: 10px;       /* 右外边距 */
+}
+
+/* 商品详情文字区域 */
+.cart-item .details {
+  flex: 1;                  /* 占据剩余空间 */
+}
+
+/* 数量控制按钮组 */
+.cart-item .qty {
+  display: flex;            /* 弹性布局 */
+  align-items: center;      /* 垂直居中 */
+}
+
+/* 数量 +/- 按钮 */
+.cart-item .qty button {
+  width: 25px;              /* 固定宽度 */
+  height: 25px;             /* 固定高度 */
+  background: #666;         /* 灰色背景 */
+  border: none;             /* 无边框 */
+  color: #fff;              /* 白色文字 */
+  cursor: pointer;          /* 手型指针 */
+}
+
+/* 数量数字 */
+.cart-item .qty span {
+  margin: 0 8px;            /* 左右间距 */
+  min-width: 20px;          /* 最小宽度 */
+  text-align: center;       /* 居中 */
+}
+
+/* 总价显示 */
+.total {
+  text-align: right;        /* 右对齐 */
+  font-size: 18px;          /* 字体大小 */
+  margin: 15px 0;           /* 上下间距 */
+  font-weight: bold;        /* 加粗 */
+}
+
+/* 购物车底部按钮组 */
+.cart-footer {
+  display: flex;            /* 弹性布局 */
+  justify-content: space-between; /* 两端对齐 */
+}
+
+/* 清空购物车按钮颜色 */
+.close-cart {
+  background: #e74c3c;      /* 红色背景 */
+}
+
+/* 悬浮购物车按钮 */
+.floating-cart {
+  position: fixed;          /* 固定在右下角 */
+  right: 20px;              /* 距离右边20px */
+  bottom: 30px;             /* 距离底部30px */
+  background: #ff6b6b;      /* 红色背景 */
+  color: #fff;              /* 白色文字 */
+  width: 60px;              /* 宽高相等 */
+  height: 60px;
+  border-radius: 50%;       /* 圆形 */
+  border: none;             /* 无边框 */
+  font-size: 28px;          /* 大号购物车图标 */
+  cursor: pointer;          /* 手型指针 */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* 阴影 */
+}
+
+/* 购物车数量角标 */
+#cartCount {
+  position: absolute;       /* 绝对定位 */
+  top: -8px;                /* 向上偏移 */
+  right: -8px;              /* 向右偏移 */
+  background: #fff;         /* 白色背景 */
+  color: #ff6b6b;           /* 红色数字 */
+  border-radius: 50%;       /* 圆形 */
+  width: 24px;              /* 固定尺寸 */
+  height: 24px;
+  font-size: 12px;          /* 小号字体 */
+  line-height: 24px;        /* 垂直居中 */
+  text-align: center;       /* 水平居中 */
+}
